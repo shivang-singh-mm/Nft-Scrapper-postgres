@@ -1,0 +1,448 @@
+{
+	"info": {
+		"_postman_id": "770d19a4-fc68-43fe-94e8-4709d5fac420",
+		"name": "Collection",
+		"description": "\"arbitrum\",    \"astarzkevm\",    \"base\",    \"zksync\",    \"tezos\",    \"solana\",    \"polygon\",    \"rari\",    \"mantle\",    \"lightlink\",    \"immutablex\",    \"flow\",    \"ethereum\",    \"chiliz\",    \"postgres\"EndFragment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22791231",
+		"_collection_link": "https://galactic-space-853048.postman.co/workspace/e9b07954-1608-460d-ad3a-707c2ad1f33b/collection/22791231-770d19a4-fc68-43fe-94e8-4709d5fac420?action=share&source=collection_link&creator=22791231"
+	},
+	"item": [
+		{
+			"name": "CollectionList",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:6983/collections/list/:blockchain/:offset/:limit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6983",
+					"path": [
+						"collections",
+						"list",
+						":blockchain",
+						":offset",
+						":limit"
+					],
+					"variable": [
+						{
+							"key": "blockchain",
+							"value": "arbitrum"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "5",
+							"description": "Number of assests we want to fetch"
+						}
+					]
+				},
+				"description": "Retrieveing all the collections available in DB."
+			},
+			"response": []
+		},
+		{
+			"name": "CollectionBasicDetail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:6983/collections/details/:databse/:collection_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6983",
+					"path": [
+						"collections",
+						"details",
+						":databse",
+						":collection_id"
+					],
+					"variable": [
+						{
+							"key": "databse",
+							"value": "arbitrum"
+						},
+						{
+							"key": "collection_id",
+							"value": "ARBITRUM:0x05022c9a0d6875f7bd39f9be5895bd4282652c78"
+						}
+					]
+				},
+				"description": "Retreiving the detail of one single collection based on collection_id"
+			},
+			"response": []
+		},
+		{
+			"name": "CollectionAssetList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6983/assets/list/:blockchain/:collection_uuid/:offset/:limit",
+					"host": [
+						"localhost"
+					],
+					"port": "6983",
+					"path": [
+						"assets",
+						"list",
+						":blockchain",
+						":collection_uuid",
+						":offset",
+						":limit"
+					],
+					"variable": [
+						{
+							"key": "blockchain",
+							"value": "arbitrum"
+						},
+						{
+							"key": "collection_uuid",
+							"value": "046167daf43447718ecf9086705f072a"
+						},
+						{
+							"key": "offset",
+							"value": "0",
+							"description": "page number"
+						},
+						{
+							"key": "limit",
+							"value": "2",
+							"description": "Number of assests we want to fetch"
+						}
+					]
+				},
+				"description": "Getting list of all assets of a collection by using collection_id"
+			},
+			"response": []
+		},
+		{
+			"name": "AssetBasicDetail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:6983/assets/details/:blockchain/:asset_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6983",
+					"path": [
+						"assets",
+						"details",
+						":blockchain",
+						":asset_id"
+					],
+					"variable": [
+						{
+							"key": "blockchain",
+							"value": "arbitrum"
+						},
+						{
+							"key": "asset_id",
+							"value": "ARBITRUM:0x05022c9a0d6875f7bd39f9be5895bd4282652c78:1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AssetInCollection",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:6983/collection/asset/:blockchain/:uuid/:assetId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6983",
+					"path": [
+						"collection",
+						"asset",
+						":blockchain",
+						":uuid",
+						":assetId"
+					],
+					"variable": [
+						{
+							"key": "blockchain",
+							"value": "arbitrum"
+						},
+						{
+							"key": "uuid",
+							"value": "046167daf43447718ecf9086705f072a"
+						},
+						{
+							"key": "assetId",
+							"value": "ARBITRUM:0x05022c9a0d6875f7bd39f9be5895bd4282652c78:1"
+						}
+					]
+				},
+				"description": "Getting detail of one asset by tracing the the collection_uuid and asset_id."
+			},
+			"response": []
+		},
+		{
+			"name": "SearchCollections",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:6983/search/collections/:blockchain?queryParam=Background",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6983",
+					"path": [
+						"search",
+						"collections",
+						":blockchain"
+					],
+					"query": [
+						{
+							"key": "queryParam",
+							"value": "Background"
+						}
+					],
+					"variable": [
+						{
+							"key": "blockchain",
+							"value": "polygon"
+						}
+					]
+				},
+				"description": "Getting collections based on the the collection name"
+			},
+			"response": []
+		},
+		{
+			"name": "SearchAssets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:6983/search/assets/:blockchain/:offset/:limit?queryParam=Background",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6983",
+					"path": [
+						"search",
+						"assets",
+						":blockchain",
+						":offset",
+						":limit"
+					],
+					"query": [
+						{
+							"key": "queryParam",
+							"value": "Background"
+						}
+					],
+					"variable": [
+						{
+							"key": "blockchain",
+							"value": "polygon"
+						},
+						{
+							"key": "offset",
+							"value": "2"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				},
+				"description": "Getting detail of one particular asset using asset_id"
+			},
+			"response": []
+		},
+		{
+			"name": "EnableCollection",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"collectionUuids\": [\"046167daf43447718ecf9086705f072a\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6983/collections/enable/:database",
+					"host": [
+						"localhost"
+					],
+					"port": "6983",
+					"path": [
+						"collections",
+						"enable",
+						":database"
+					],
+					"variable": [
+						{
+							"key": "database",
+							"value": "arbitrum"
+						}
+					]
+				},
+				"description": "Enabling the status of collection"
+			},
+			"response": []
+		},
+		{
+			"name": "DisableCollection",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"collectionUuids\":  [\"046167daf43447718ecf9086705f072a\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6983/collections/disable/:blockchain",
+					"host": [
+						"localhost"
+					],
+					"port": "6983",
+					"path": [
+						"collections",
+						"disable",
+						":blockchain"
+					],
+					"variable": [
+						{
+							"key": "blockchain",
+							"value": "arbitrum"
+						}
+					]
+				},
+				"description": "Disabling the status of collection"
+			},
+			"response": []
+		},
+		{
+			"name": "EnableAsset",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"assetUuids\": [\"9179b453b6e24b26bec10cfed26cbdac\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6983/assets/enable/:blockchain",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6983",
+					"path": [
+						"assets",
+						"enable",
+						":blockchain"
+					],
+					"variable": [
+						{
+							"key": "blockchain",
+							"value": "arbitrum"
+						}
+					]
+				},
+				"description": "Enabling the status of asssets"
+			},
+			"response": []
+		},
+		{
+			"name": "DisableAsset",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"assetUuids\": [\"9179b453b6e24b26bec10cfed26cbdac\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6983/assets/disable/:blockchain",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6983",
+					"path": [
+						"assets",
+						"disable",
+						":blockchain"
+					],
+					"variable": [
+						{
+							"key": "blockchain",
+							"value": "arbitrum"
+						}
+					]
+				},
+				"description": "Disabling the collection of Assets"
+			},
+			"response": []
+		},
+		{
+			"name": "BlockchainList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:6983/blockchains",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6983",
+					"path": [
+						"blockchains"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

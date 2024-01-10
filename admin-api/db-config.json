@@ -1,0 +1,17 @@
+{
+    "dbnames":["arbitrum",
+    "astarzkevm",
+    "base",
+    "zksync",
+    "tezos",
+    "solana",
+    "polygon",
+    "rari",
+    "mantle",
+    "lightlink",
+    "immutablex",
+    "flow",
+    "ethereum",
+    "chiliz",
+    "postgres"]
+}

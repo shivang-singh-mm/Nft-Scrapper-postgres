@@ -1,0 +1,7 @@
+Sample Response Objects
+__pycache__
+
+*.log
+
+admin-api/node_modules
+admin-api/package-lock.json
